@@ -1,0 +1,96 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --input-bg: #f8f8f8;
+  --pre-bg: #f2f2f2;
+  --button-bg: #4a90e2;
+  --button-text: white;
+  --border-color: #ddd;
+}
+
+body.dark-theme {
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --input-bg: #2d2d2d;
+  --pre-bg: #2a2a2a;
+  --button-bg: #3a6ea5;
+  --button-text: #e0e0e0;
+  --border-color: #444;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+textarea, input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+pre {
+  background-color: var(--pre-bg);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  cursor: pointer;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(32px);
+} 
